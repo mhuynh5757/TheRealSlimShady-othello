@@ -116,7 +116,7 @@ Move *Player::doMove(Move *opponentsMove, int msLeft)
     {
         Board * new_board = myBoard->copy();
         new_board->set(mySide, possible_moves.at(i)->getX(), possible_moves.at(i)->getY());
-        int score = -negascout(*new_board, oppSide, -1000, 1000, 5);
+        int score = -negascout(*new_board, oppSide, -999, 999, 3);
         if (max_score < score)
         {
             max_score = score;
